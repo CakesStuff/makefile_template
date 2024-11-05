@@ -10,7 +10,7 @@ TOTAL := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
 
 UNITS := unit
 COUNT = $(words $(UNITS))$(eval UNITS := unit $(UNITS))
-ECHO = echo "$$(printf "\033[1;34m[%3d]\033[0m" $$(expr $(COUNT) '*' 100 / $(TOTAL)))"
+ECHO = echo "$$(printf "\033[1;34m[%3d%%]\033[0m" $$(expr $(COUNT) '*' 100 / $(TOTAL)))"
 endif
 
 -include build.mk
